@@ -1,4 +1,4 @@
-import { SUCCESSFUL_RESPONSE, ERROR_RESPONSE } from "./constants/commons";
+import { SUCCESSFUL_RESPONSE, ERROR_RESPONSE } from "./constants/commons.js";
 
 /**
  * 
@@ -29,11 +29,13 @@ export const success = (res, folio, content, message, statusCode = 200) => {
  * @param {*} message 
  * @param {*} statusCode 
  */
-export const error = (res, folio, content, message, statusCode = 400) => {
-    
+export const error = (res, folio, details, message, statusCode = 400) => {
+
+    details = { details }
+
     const response = {
         folio,
-        content,
+        content: details,
         message
     }
 
